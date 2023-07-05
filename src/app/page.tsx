@@ -1,5 +1,13 @@
+'use client'
+
+import { signIn, signOut, useSession } from 'Next-auth/react'
+
 export default function Home() {
+  const { data } = useSession()
+
   return (
-    <h1>Teste teste</h1>
+    <div>
+      
+    </div>
   )
 }
