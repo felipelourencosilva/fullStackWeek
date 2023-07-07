@@ -9,6 +9,7 @@ export default function Home() {
       <TripSearch />
       <QuickSearch />
       <RecommendedTrips />
+      
     </div>
   )
 }
