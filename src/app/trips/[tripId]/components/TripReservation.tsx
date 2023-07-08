@@ -70,9 +70,7 @@ const TripReservation = ({ tripId, maxGuests, tripStartDate, tripEndDate, priceP
       });
     }
 
-    router.push(
-      `/trips/${tripId}/confirmation?startDate=${data.startDate?.toISOString()}&endDate=${data.endDate?.toISOString()}&guests=${data.guests}`
-    );
+    
   }
 
   const startDate = watch("startDate")
@@ -130,12 +128,17 @@ const TripReservation = ({ tripId, maxGuests, tripStartDate, tripEndDate, priceP
           required: {
             value: true,
             message: 'Número de hóspedes é obrigatório'
+          },
+          max: {
+            value: maxGuests,
+            message: `Número de hóspedes não pode ser maior que ${maxGuests}`,
           }
         })}
         placeholder={`Número de hóspedes (max: ${maxGuests})`}
         className="mt-4"
         error={!!errors?.guests}
         errorMessage={errors?.guests?.message}
+        type='number'
       />
 
       <div className="flex justify-between mt-3">
