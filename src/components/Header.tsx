@@ -8,15 +8,17 @@ import Link from 'next/link'
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
+
   const { status, data } = useSession();
 
+  const handleLoginClick = () => signIn()
 
-  const handleLoginClick = () => {
-    setMenuIsOpen(!menuIsOpen)
-    signIn()
+  const handleLogoutClick = () => {
+    setMenuIsOpen(false)
+    signOut()
   }
+
   const handleMenuClick = () => setMenuIsOpen(!menuIsOpen)
-  const handleLogoutClick = () => signOut()
 
   return (
     <div className="container mx-auto p-5 h-[93px] py-0 justify-between items-center flex" >
@@ -37,8 +39,12 @@ const Header = () => {
         <Image height={32} width={32} src={data.user.image!} alt={data.user.name! }  className='rounded-full shadow-md'/>
 
         {menuIsOpen && (
-          <div className='z-50 absolute top-14 left-0 w-full h-full bg-white rounded-lg shadow-md flex flex-col justify-center items-center'>
-            <button className='text-primary text-sm font-semibold' onClick={handleLogoutClick}>Logout</button>
+          <div className='z-50 absolute top-14 left-0 w-full h-[100px] bg-white rounded-lg shadow-md flex flex-col justify-center items-center'>
+            <Link href="/my-trips">
+              <button className='text-primary pb-2 border-b border-grayLighter border-solid text-sm font-semibold'>Minhas viagens</button>
+            </Link>
+
+            <button className='text-primary pt-2 text-sm font-semibold' onClick={handleLogoutClick}>Logout</button>
           </div>
         )}
       </div>
