@@ -2,7 +2,7 @@
 
 import Button from '@/components/Button'
 import DatePicker from '@/components/DatePicker'
-import Input from '@/components/input'
+import Input from '@/components/Input'
 import { Trip } from '@prisma/client'
 import { differenceInDays } from 'date-fns'
 import { useRouter } from 'next/navigation'
