@@ -1,4 +1,4 @@
-import { signIn, signOut, useSession } from 'Next-auth/react'
+import { signIn, signOut, useSession } from 'next-auth/react'
 import TripSearch from './components/TripSearch'
 import QuickSearch from './components/QuickSearch'
 import RecommendedTrips from './components/RecommendedTrips'

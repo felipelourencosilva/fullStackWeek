@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { format } from 'date-fns'
-import { useSession } from 'Next-auth/react'
+import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 import ReactCountryFlag from 'react-country-flag'

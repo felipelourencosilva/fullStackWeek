@@ -3,7 +3,7 @@
 import { getServerSession } from 'next-auth'
 import React, { useEffect, useState } from 'react'
 import { authOptions } from '../api/auth/[...nextauth]/route'
-import { useSession } from 'Next-auth/react'
+import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { Prisma, TripReservation } from '@prisma/client'
 import UserReservationItem from './components/UserReservationItem'
